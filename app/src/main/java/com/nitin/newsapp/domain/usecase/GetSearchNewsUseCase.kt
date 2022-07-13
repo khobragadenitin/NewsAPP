@@ -6,8 +6,8 @@ import com.nitin.newsapp.domain.repository.NewsRepository
 
 class GetSearchNewsUseCase(private val newsRepository: NewsRepository) {
 
-    suspend fun execute(searchQuery : String) : Resource<APIResponse>{
-        return newsRepository.getSearchNews(searchQuery)
+    suspend fun execute(country : String,searchQuery : String, page : Int) : Resource<APIResponse>{
+        return newsRepository.getSearchNews(country, searchQuery, page)
     }
 
 }
